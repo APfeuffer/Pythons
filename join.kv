@@ -1,0 +1,63 @@
+# to fix: minimum size of label/buttons/window
+<ScreenJoin>:
+    GridLayout:
+#        name: name_host
+ #       ip: ip_host
+
+        rows: 3
+        cols: 3
+        canvas.before:
+            Color: 
+                rgba: 0,.75,0,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+        BoxLayout:
+            Label:
+                font_size: 77
+                text: "Join Pythons"
+        BoxLayout:
+        BoxLayout:
+        BoxLayout:
+            #size: 100,150
+            size_hint: 1,2
+            orientation: "vertical"
+            spacing: 1
+            padding: 1
+
+            Label:
+                halign: 'left'
+                text: "Enter host ip (and port)"
+            TextInput:
+#                id: ip_host
+            Label:
+                halign: 'left'
+                text: "e. g. 192.168.30.2:4242"
+            Label:
+                halign: 'left'
+                text: "Choose your name:"
+            TextInput:
+#                id: name_host
+            Label:
+                halign: 'left'
+                text: "Choose your color:"
+            # menue color circles
+            
+            
+            Button:
+                text: "Back"
+                background_color: 2.55,2.2,.75,1 
+                color: 0,0,0,1
+                on_press: 
+                    root.manager.transition.direction = 'right'
+                    root.manager.transition.duration = .5
+                    root.manager.current = 'screen_gui'
+            Button:
+                text: "Join"
+                background_color: 2.55,2.2,.75,1    # yellow
+                color: 0,0,0,1
+        BoxLayout:
+        BoxLayout:
+        BoxLayout:
+        BoxLayout:
