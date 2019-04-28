@@ -1,0 +1,69 @@
+# to fix: minimum size of label/buttons/window
+<ScreenHost>:
+    GridLayout:
+#        name: name_host
+ #       ip: ip_host
+  #      name1: name_player1
+   #     ip1: ip_player1
+
+        rows: 3
+        cols: 3
+        canvas.before:
+            Color: 
+                rgba: 0,.75,0,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+        BoxLayout:
+            Label:
+                font_size: 77
+                text: "Hosting"
+        BoxLayout:
+        BoxLayout:
+        BoxLayout:
+            #size: 100,150
+            size_hint: 1,2
+            orientation: "vertical"
+            spacing: 1
+            padding: 1
+
+            # host
+            BoxLayout:
+                orientation: "horizontal"
+                Label:
+                    halign: 'left'
+#                    text: name_host
+                # color circle
+                Label:
+#                    text: ip_host
+                    
+            # list of players. ListView: id: ... adapter: ...
+            
+            # player1
+            BoxLayout:
+                orientation: "horizontal"
+                Label:
+                    halign: 'left'
+#                    text: name_player1
+                # color circle
+                Label:
+#                    text: ip_player1
+            # player...
+            
+            Button:
+                text: "Back"
+                background_color: 2.55,2.2,.75,1 
+                color: 0,0,0,1
+                on_press: 
+                    root.manager.transition.direction = 'right'
+                    root.manager.transition.duration = .5
+                    root.manager.current = 'screen_gui'
+            Button:
+                text: "Start"
+                background_color: 2.55,2.2,.75,1    # yellow
+                color: 0,0,0,1
+        BoxLayout:
+        BoxLayout:
+        BoxLayout:
+        BoxLayout:

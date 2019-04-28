@@ -1,0 +1,59 @@
+# to fix: minimum size of label/buttons/window
+
+#: import main frontend
+<ScreenGui>:
+    GridLayout:
+        
+        rows: 6
+        cols: 3
+        canvas.before:
+            Color: 
+                rgba: 0,.75,0,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+        BoxLayout:
+            Label:
+                font_size: 77
+                halign: 'center'
+                valign: 'middle'
+                text: "Pythons"
+        BoxLayout:
+        BoxLayout:
+        BoxLayout:
+            size_hint: 1,2
+            orientation: "vertical"
+            spacing: 10
+            padding: 10         
+            
+            Button:
+                text: "Play offline"
+                background_color: .52,1.18,1.71,1   # blue
+            Button:
+                text: "Host game"
+                background_color: .52,1.18,1.71,1
+                on_press: 
+                    root.manager.transition.direction = 'left'
+                    root.manager.transition.duration = .5
+                    root.manager.current = 'screen_host'
+            Button:
+                text: "Join game"
+                background_color: .52,1.18,1.71,1
+                on_press: 
+                    root.manager.transition.direction = 'left'
+                    root.manager.transition.duration = .5
+                    root.manager.current = 'screen_join'
+            Button:
+                text: "Settings"
+                background_color: .52,1.18,1.71,1
+            Button:
+                text: "Quit"
+                background_color: .52,1.18,1.71,1
+                on_press:
+                    quit()
+        BoxLayout:
+        BoxLayout:
+        BoxLayout:
+        BoxLayout:
+        
